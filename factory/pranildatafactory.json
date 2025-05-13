@@ -1,0 +1,9 @@
+{
+	"name": "pranildatafactory",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a64cd8ff-1e33-4df0-93d7-e52eebee20ae",
+		"tenantId": "96b40146-5a72-427d-978b-15c1621d104a"
+	}
+}
