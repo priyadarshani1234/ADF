@@ -1,0 +1,46 @@
+{
+	"name": "Parquet2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "*",
+				"folderPath": "final_output/final_data.parquet",
+				"container": "gold"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "fullname",
+				"type": "UTF8"
+			},
+			{
+				"name": "id",
+				"type": "INT_64"
+			},
+			{
+				"name": "designation",
+				"type": "UTF8"
+			},
+			{
+				"name": "bloodgroup",
+				"type": "UTF8"
+			},
+			{
+				"name": "email",
+				"type": "UTF8"
+			},
+			{
+				"name": "salary",
+				"type": "DOUBLE"
+			}
+		]
+	}
+}

@@ -16,16 +16,13 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource",
-						"sqlReaderQuery": {
-							"value": "SELECT LastLoadedTime FROM MetadataTracking WHERE TableName = 'employee';",
-							"type": "Expression"
-						},
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT LastLoadedTime FROM MetadataTracking WHERE TableName = 'employee';\n ",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SqlServerTable1",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": true
@@ -65,7 +62,7 @@
 								"source": {
 									"type": "AzurePostgreSqlSource",
 									"query": {
-										"value": "SELECT * FROM employee\nWHERE created_at > '@{activity('Lookup1').output.firstRow.LastLoadedTime}'",
+										"value": "SELECT * FROM employee\nWHERE timestamp > '@{activity('Lookup1').output.firstRow.LastLoadedTime}'",
 										"type": "Expression"
 									},
 									"partitionOption": "None"
@@ -91,13 +88,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzurePostgreSqlTable1",
+									"referenceName": "AzurePostgreSqlTablepriya",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "Parquet2",
+									"referenceName": "Parquet1",
 									"type": "DatasetReference"
 								}
 							]
@@ -122,7 +119,7 @@
 							},
 							"userProperties": [],
 							"linkedServiceName": {
-								"referenceName": "SqlServer2",
+								"referenceName": "SqlServerpriya1",
 								"type": "LinkedServiceReference"
 							},
 							"typeProperties": {
@@ -159,7 +156,6 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzurePostgreSqlSource",
-									"query": "SELECT * FROM employee",
 									"partitionOption": "None"
 								},
 								"sink": {
@@ -183,13 +179,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzurePostgreSqlTable1",
+									"referenceName": "AzurePostgreSqlTablepriya",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "Parquet2",
+									"referenceName": "Parquet1",
 									"type": "DatasetReference"
 								}
 							]
@@ -214,7 +210,7 @@
 							},
 							"userProperties": [],
 							"linkedServiceName": {
-								"referenceName": "SqlServer2",
+								"referenceName": "SqlServerpriya1",
 								"type": "LinkedServiceReference"
 							},
 							"typeProperties": {
@@ -241,7 +237,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "Parquet2",
+									"referenceName": "Parquet1",
 									"type": "DatasetReference"
 								},
 								"enableLogging": false,
@@ -395,16 +391,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/balakrushna.nayak.mca.2023@nist.edu/Cleaning Notebook",
+					"notebookPath": "/Users/rdb021@nist.edu/cleaning nbk",
 					"baseParameters": {
-						"container_name": "output",
-						"storage_account": "storagekumarr",
-						"file_path": "output/output/test.txt",
+						"container_name": "silver",
+						"storage_account": "priyastorage4",
+						"file_path": "silver/df_final.parquet",
 						"file_format": "parquet"
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
+					"referenceName": "AzureDatabrickspriya",
 					"type": "LinkedServiceReference"
 				}
 			},
@@ -428,16 +424,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/balakrushna.nayak.mca.2023@nist.edu/Optimization Notebook",
+					"notebookPath": "/Users/rdb021@nist.edu/optimization nbk",
 					"baseParameters": {
 						"container_name": "gold",
-						"storage_account": "storagekumarr",
-						"file_path": "gold/final_gold/opt_df.parquet/part-00000-tid-4993657806633672324-a944574d-6e69-4fa5-a26b-ded2217b9859-3956-1-c000.snappy.parquet",
+						"storage_account": "priyastorage4",
+						"file_path": "final_output/final_data.parquet",
 						"file_format": "parquet"
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
+					"referenceName": "AzureDatabrickspriya",
 					"type": "LinkedServiceReference"
 				}
 			},
@@ -447,6 +443,12 @@
 				"dependsOn": [
 					{
 						"activity": "endtime_pp",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "export_copyData_status",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -553,16 +555,30 @@
 								"type": "Expression"
 							},
 							"type": "String"
+						},
+						"export_copyData_status": {
+							"value": {
+								"value": "@variables('export_copyData_status')",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"export_copyData_error": {
+							"value": {
+								"value": "@variables('export_copyData_error')",
+								"type": "Expression"
+							},
+							"type": "String"
 						}
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "linkedService1",
+					"referenceName": "SqlServerpriya1",
 					"type": "LinkedServiceReference"
 				}
 			},
 			{
-				"name": "Copy data3",
+				"name": "export_copyData",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -586,6 +602,8 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "final_output/final_data.parquet/",
+							"wildcardFileName": "*.parquet",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -610,16 +628,64 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Parquet3",
+						"referenceName": "Parquet2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzurePostgreSqlTable1",
+						"referenceName": "AzurePostgreSqlTablepriya",
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "export_copyData_status",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "export_copyData",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "export_copyData_status",
+					"value": {
+						"value": "@if(equals(activity('export_copyData').Status, 'Succeeded'), 'succeeded', 'failed')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "export_copyData_error",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "export_copyData",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "export_copyData_error",
+					"value": {
+						"value": "@string(activity('export_copyData').Error.message)",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -648,6 +714,12 @@
 				"type": "String"
 			},
 			"ifError": {
+				"type": "String"
+			},
+			"export_copyData_status": {
+				"type": "String"
+			},
+			"export_copyData_error": {
 				"type": "String"
 			}
 		},
