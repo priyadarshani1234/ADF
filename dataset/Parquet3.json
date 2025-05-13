@@ -1,8 +1,8 @@
 {
-	"name": "Parquet1",
+	"name": "Parquet3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage3",
+			"referenceName": "AzureBlobStorage5",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,34 +10,27 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "employee.parquet",
-				"container": "output"
+				"fileName": "part-00000-tid-7071497880579392456-c9ba694f-a711-434e-95e6-899a4feb6504-1875-1-c000.snappy.parquet",
+				"folderPath": "final_gold/opt_df.parquet",
+				"container": "gold"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
-				"name": "id",
-				"type": "INT64"
-			},
-			{
-				"name": "surname",
-				"type": "UTF8"
-			},
-			{
-				"name": "lastname",
-				"type": "UTF8"
-			},
-			{
 				"name": "designation",
 				"type": "UTF8"
 			},
 			{
-				"name": "bloodgroup",
+				"name": "fullname",
 				"type": "UTF8"
 			},
 			{
-				"name": "phonenumber",
+				"name": "id",
+				"type": "INT32"
+			},
+			{
+				"name": "bloodgroup",
 				"type": "UTF8"
 			},
 			{
