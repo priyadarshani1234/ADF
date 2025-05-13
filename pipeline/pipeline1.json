@@ -41,28 +41,8 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "AzurePostgreSqlTable1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Parquet2",
-						"type": "DatasetReference"
-					}
-				]
+					"enableStaging": false
+				}
 			},
 			{
 				"name": "entry_point",
@@ -84,10 +64,6 @@
 					"source": {
 						"type": "AzurePostgreSqlSource",
 						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "AzurePostgreSqlTable1",
-						"type": "DatasetReference"
 					}
 				}
 			}
