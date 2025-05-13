@@ -59,7 +59,7 @@
 		],
 		"typeProperties": {
 			"schema": "public",
-			"table": "final_employee"
+			"table": "employee"
 		}
 	}
 }
