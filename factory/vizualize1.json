@@ -1,0 +1,9 @@
+{
+	"name": "vizualize1",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2bcd2013-8b16-46b9-89e3-61c9c185111f",
+		"tenantId": "72f7d67b-2a14-4d27-b96f-eb302c63bba6"
+	}
+}
