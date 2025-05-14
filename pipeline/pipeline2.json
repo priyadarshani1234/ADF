@@ -28,7 +28,7 @@
 						"referenceName": "SqlServerTable2",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(activity('Lookup1').output.LastLoadedTime, null)\n\n",
+						"value": "@equals(activity('Lookup1').output.firstRow.LastLoadedTime, null)\n\n",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -65,7 +65,7 @@
 								"source": {
 									"type": "AzurePostgreSqlSource",
 									"query": {
-										"value": "SELECT * FROM employee\nWHERE timestamp > '@{activity('Lookup1').output.LastLoadedTime}'",
+										"value": "SELECT * FROM employee\nWHERE timestamp > '@{activity('Lookup1').output.firstRow.LastLoadedTime}'\n",
 										"type": "Expression"
 									},
 									"partitionOption": "None"
