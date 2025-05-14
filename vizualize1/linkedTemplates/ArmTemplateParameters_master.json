@@ -1,0 +1,219 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "vizualize1"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage5_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
+		"AzureDatabrickspriya_accessToken": {
+			"value": ""
+		},
+		"AzurePostgreSql1_password": {
+			"value": ""
+		},
+		"AzurePostgreSql2_password": {
+			"value": ""
+		},
+		"AzurePostgreSql3_password": {
+			"value": ""
+		},
+		"AzurePostgreSql4_password": {
+			"value": ""
+		},
+		"AzurePostgreSql5_password": {
+			"value": ""
+		},
+		"AzurePostgreSql6_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"SqlServer3_password": {
+			"value": ""
+		},
+		"SqlServerpriya1_password": {
+			"value": ""
+		},
+		"linkedService1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://priyastorage4.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0428-100412-molrnzzj"
+		},
+		"AzureDatabrickspriya_properties_typeProperties_existingClusterId": {
+			"value": "0509-065846-mouow34t"
+		},
+		"AzurePostgreSql1_properties_typeProperties_server": {
+			"value": "pranilserver.postgres.database.azure.com"
+		},
+		"AzurePostgreSql1_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql1_properties_typeProperties_username": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql2_properties_typeProperties_server": {
+			"value": "admin2025.postgres.database.azure.com"
+		},
+		"AzurePostgreSql2_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql2_properties_typeProperties_username": {
+			"value": "admin2025"
+		},
+		"AzurePostgreSql3_properties_typeProperties_server": {
+			"value": "admin2025.postgres.database.azure.com"
+		},
+		"AzurePostgreSql3_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql3_properties_typeProperties_username": {
+			"value": "admin2025"
+		},
+		"AzurePostgreSql4_properties_typeProperties_server": {
+			"value": "admin2025.postgres.database.azure.com"
+		},
+		"AzurePostgreSql4_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql4_properties_typeProperties_username": {
+			"value": "admin2025"
+		},
+		"AzurePostgreSql5_properties_typeProperties_server": {
+			"value": "admin2025.postgres.database.azure.com"
+		},
+		"AzurePostgreSql5_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql5_properties_typeProperties_username": {
+			"value": "admin2025"
+		},
+		"AzurePostgreSql6_properties_typeProperties_server": {
+			"value": "admin2025.postgres.database.azure.com"
+		},
+		"AzurePostgreSql6_properties_typeProperties_database": {
+			"value": "postgres"
+		},
+		"AzurePostgreSql6_properties_typeProperties_username": {
+			"value": "admin2025"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "admin2026.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "admin2026"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "admin2026"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "admin2026.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "admin2026"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "admin2026"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "admin2026.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "admin2026"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "admin2026"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "admin2024.database.windows.net"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "admin2025"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "admin2025"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "admin2024.database.windows.net"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "admin2025"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "admin2024"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"value": "admin2026.database.windows.net"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"value": "admin2026"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "admin2026"
+		},
+		"SqlServerpriya1_properties_typeProperties_server": {
+			"value": "admin2026.database.windows.net"
+		},
+		"SqlServerpriya1_properties_typeProperties_database": {
+			"value": "admin2026"
+		},
+		"SqlServerpriya1_properties_typeProperties_userName": {
+			"value": "admin2026"
+		},
+		"linkedService1_properties_typeProperties_server": {
+			"value": "admin2024.database.windows.net"
+		},
+		"linkedService1_properties_typeProperties_database": {
+			"value": "admin2025"
+		},
+		"linkedService1_properties_typeProperties_userName": {
+			"value": "admin2024"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
