@@ -10,8 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "*",
-				"folderPath": "final_output/final_data.parquet",
 				"container": "gold"
 			},
 			"compressionCodec": "snappy"
