@@ -2,7 +2,7 @@
 	"name": "Parquet2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage4",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,35 +10,12 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "gold"
+				"fileName": "employee_fixed.parquet",
+				"container": "output"
 			},
 			"compressionCodec": "snappy"
 		},
-		"schema": [
-			{
-				"name": "fullname",
-				"type": "UTF8"
-			},
-			{
-				"name": "id",
-				"type": "INT_64"
-			},
-			{
-				"name": "designation",
-				"type": "UTF8"
-			},
-			{
-				"name": "bloodgroup",
-				"type": "UTF8"
-			},
-			{
-				"name": "email",
-				"type": "UTF8"
-			},
-			{
-				"name": "salary",
-				"type": "DOUBLE"
-			}
-		]
-	}
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

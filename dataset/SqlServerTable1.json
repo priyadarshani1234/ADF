@@ -2,7 +2,7 @@
 	"name": "SqlServerTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServerpriya1",
+			"referenceName": "SqlServer2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -23,5 +23,6 @@
 			"schema": "dbo",
 			"table": "MetadataTracking"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

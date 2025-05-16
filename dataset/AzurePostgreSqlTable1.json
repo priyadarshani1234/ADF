@@ -2,7 +2,7 @@
 	"name": "AzurePostgreSqlTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzurePostgreSql4",
+			"referenceName": "AzurePostgreSql1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,8 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "public",
-			"table": "final_output"
+			"table": "employee"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

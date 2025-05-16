@@ -2,7 +2,7 @@
 	"name": "Parquet3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage5",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -42,5 +42,6 @@
 				"type": "DOUBLE"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

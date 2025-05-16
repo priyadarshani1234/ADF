@@ -1,0 +1,9 @@
+{
+	"name": "pranildatafactory1",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "939630f9-0b2f-4632-988b-bcf2e702dbb8",
+		"tenantId": "a3310597-1a00-4e9d-b58c-7a7fefaf8d54"
+	}
+}
