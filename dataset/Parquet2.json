@@ -10,8 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "employee_fixed.parquet",
-				"container": "output"
+				"fileName": "part-00000-tid-5281943328963008984-c11d1d68-4597-4a6f-bcd7-c7d213f72dc4-34-1.c000.snappy.parquet",
+				"folderPath": "final_output/final_data.parquet",
+				"container": "gold"
 			},
 			"compressionCodec": "snappy"
 		},

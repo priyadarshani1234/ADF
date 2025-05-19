@@ -395,10 +395,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/rdb021@nist.edu/cleaning nbk",
+					"notebookPath": "/Users/subhalakshmi.pani.mca.2023@nist.edu/cleaning nbk (1)",
 					"baseParameters": {
 						"container_name": "silver",
-						"storage_account": "priyastorage4",
+						"storage_account": "pranilstore",
 						"file_path": "silver/df_final.parquet",
 						"file_format": "parquet"
 					}
@@ -428,10 +428,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/rdb021@nist.edu/optimization nbk",
+					"notebookPath": "/Users/subhalakshmi.pani.mca.2023@nist.edu/optimization nbk (1)",
 					"baseParameters": {
 						"container_name": "gold",
-						"storage_account": "priyastorage4",
+						"storage_account": "pranilstore",
 						"file_path": "final_output/final_data.parquet",
 						"file_format": "parquet"
 					}
@@ -492,7 +492,21 @@
 						},
 						"EndTime": {
 							"value": {
-								"value": "@variables('EndTime')",
+								"value": "@utcNow()",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"export_copyData_error": {
+							"value": {
+								"value": "@variables('export_copyData_error')",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"export_copyData_status": {
+							"value": {
+								"value": "@variables('export_copyData_status')",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -556,20 +570,6 @@
 						"TriggerTime": {
 							"value": {
 								"value": "@pipeline().TriggerTime",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"export_copyData_status": {
-							"value": {
-								"value": "@variables('export_copyData_status')",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"export_copyData_error": {
-							"value": {
-								"value": "@variables('export_copyData_error')",
 								"type": "Expression"
 							},
 							"type": "String"

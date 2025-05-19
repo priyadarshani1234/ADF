@@ -41,7 +41,7 @@
 		],
 		"typeProperties": {
 			"schema": "public",
-			"table": "final_emp"
+			"table": "final_employee"
 		}
 	}
 }
